@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masala Junction – Restaurant (Demo)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--char:#1E1A17;--char-2:#2A2420;--chili:#D7372B;--turmeric:#F2B632;--cream:#FFF7EA;--ink:#1E1A17;--muted:#6F625A;--line:#EADFCF;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Work Sans',system-ui,sans-serif;color:var(--ink);background:var(--cream)}
+h1,h2,h3{font-family:'Fraunces',serif;margin:0;line-height:1.05}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.demo-bar{background:#000;color:#eee;font-size:13px;text-align:center;padding:8px 16px}
+.demo-bar a{color:#9cc8ff}
+header{background:var(--char);position:sticky;top:0;z-index:40;border-bottom:1px solid #3a322c}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 24px;max-width:1160px;margin:0 auto}
+.logo{text-decoration:none;color:var(--white);font-family:'Fraunces',serif;font-weight:800;font-size:24px}
+.logo span{color:var(--turmeric)}
+.menu{display:flex;gap:22px;align-items:center;flex-wrap:wrap;font-weight:500}
+.menu a{color:#EDE3D6;text-decoration:none}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:inherit;font-weight:700;text-decoration:none;border-radius:8px;padding:14px 24px;font-size:15px;transition:transform .2s, box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(215,55,43,.35)}
+.btn-chili{background:var(--chili);color:var(--white)}
+.btn-ghost{border:1px solid #6b5d52;color:var(--white)}
+.menu .btn{color:var(--white);padding:10px 18px}
+
+.hero{background:var(--char);color:var(--white);position:relative;overflow:hidden;padding:90px 0 110px}
+.hero-grid{display:flex;flex-wrap:wrap;gap:40px;align-items:center;position:relative}
+.hero-text{flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.kicker{color:var(--turmeric);font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:13px}
+.hero h1{font-size:72px;font-weight:800}
+.hero h1 i{color:var(--turmeric);font-style:italic}
+.hero p{font-size:18px;line-height:1.7;color:#CFC3B6;max-width:520px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.plate-area{flex:1 1 360px;min-width:0;position:relative;height:380px;display:flex;align-items:center;justify-content:center}
+.plate{width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#F7E7C9 0 38%,#E8D2AC 39% 41%,#FFFFFF 42% 70%,#EEE3D2 71% 100%);box-shadow:0 30px 70px rgba(0,0,0,.5);position:relative;animation:spin 40s linear infinite}
+.plate::before{content:"";position:absolute;inset:26%;border-radius:50%;background:radial-gradient(circle at 40% 40%,#F2B632,#D7372B 70%);opacity:.9}
+.spark{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--turmeric);opacity:.8;animation:steam 3.5s ease-in infinite}
+.s1{left:46%;top:16%}.s2{left:54%;top:14%;animation-delay:1.1s}.s3{left:50%;top:18%;animation-delay:2.2s}
+.stamp{position:absolute;right:4%;bottom:6%;width:110px;height:110px;border-radius:50%;background:var(--chili);color:var(--white);display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Fraunces',serif;font-weight:800;font-size:16px;line-height:1.1;transform:rotate(-12deg);border:3px dashed rgba(255,255,255,.6)}
+
+.strip{background:var(--turmeric);color:var(--char);font-weight:700;overflow:hidden;padding:14px 0}
+.strip-track{display:flex;gap:36px;width:max-content;white-space:nowrap;font-family:'Fraunces',serif;font-size:20px;animation:marquee 26s linear infinite}
+
+section{padding:92px 0}
+.head{text-align:center;max-width:600px;margin:0 auto 36px;display:flex;flex-direction:column;gap:10px}
+.eyebrow{color:var(--chili);font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:13px}
+.head h2{font-size:48px}
+.head p{color:var(--muted);line-height:1.7}
+
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:30px}
+.tab{font:inherit;font-weight:700;border:1px solid var(--line);background:var(--white);color:var(--ink);border-radius:999px;padding:11px 20px;cursor:pointer;transition:background .2s,color .2s}
+.tab[aria-selected="true"]{background:var(--char);color:var(--white);border-color:var(--char)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:4px 40px;max-width:960px;margin:0 auto}
+.item{display:flex;align-items:baseline;gap:12px;padding:18px 0;border-bottom:1px dashed var(--line);animation:fade .4s ease both}
+.item h3{font-size:21px;font-weight:600}
+.item p{color:var(--muted);font-size:14px;margin-top:4px}
+.item .dots{flex:1;border-bottom:2px dotted #D8C8B2;transform:translateY(-6px)}
+.item b{font-weight:700;color:var(--chili);white-space:nowrap}
+.veg{display:inline-block;width:12px;height:12px;border:2px solid #1E8E3E;border-radius:2px;margin-right:8px;position:relative;top:1px}
+.veg::after{content:"";position:absolute;inset:2px;border-radius:50%;background:#1E8E3E}
+.hidden{display:none}
+
+.info{background:var(--char);color:var(--white)}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.card{background:var(--char-2);border:1px solid #3a322c;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.card h3{font-size:24px;color:var(--turmeric)}
+.card p{color:#CFC3B6;line-height:1.7}
+.order{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.order h2{font-size:46px;max-width:640px}
+.order p{color:var(--muted)}
+footer{background:#000;color:#A99C90;padding:26px 0;font-size:14px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:#1d1d1d;color:#fff;padding:14px 20px;border-radius:12px;font-size:14px;transition:transform .35s,visibility .35s;z-index:99;visibility:hidden}
+.toast.show{transform:translateX(-50%) translateY(0);visibility:visible}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes steam{0%{transform:translateY(0) scale(1);opacity:0}20%{opacity:.8}100%{transform:translateY(-120px) scale(2.4);opacity:0}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:700px){.hero h1{font-size:46px}.head h2,.order h2{font-size:34px}.menu .hide{display:none}section{padding:70px 0}.plate{width:240px;height:240px}.plate-area{height:300px}.menu-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo website (sample design, not a real restaurant) · Made by <a href="/">SL Enterprises, Ujjain</a></div>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo">Masala <span>Junction</span></a>
+    <nav class="menu">
+      <a href="#menu" class="hide">Menu</a>
+      <a href="#visit" class="hide">Visit</a>
+      <a href="#order" class="btn btn-chili">Order Now</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="kicker">Pure veg · Family restaurant</span>
+      <h1>Ghar jaisa swaad, <i>har din.</i></h1>
+      <p>Fresh thalis, sizzling street food and Malwa favourites – cooked to order and served hot.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-chili">See the menu</a>
+        <a href="#order" class="btn btn-ghost">Order on WhatsApp</a>
+      </div>
+    </div>
+    <div class="plate-area" aria-hidden="true">
+      <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span>
+      <div class="plate"></div>
+      <div class="stamp">Fresh<br>&amp; Hot</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="strip-track">
+  <span>Poha Jalebi</span><span>✺</span><span>Dal Bafla</span><span>✺</span><span>Paneer Tikka</span><span>✺</span><span>Special Thali</span><span>✺</span><span>Masala Chai</span><span>✺</span><span>Bhutte ka Kees</span><span>✺</span>
+  <span>Poha Jalebi</span><span>✺</span><span>Dal Bafla</span><span>✺</span><span>Paneer Tikka</span><span>✺</span><span>Special Thali</span><span>✺</span><span>Masala Chai</span><span>✺</span><span>Bhutte ka Kees</span><span>✺</span>
+</div></div>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Our Menu</span><h2>Something for every craving</h2><p>Sample menu and prices for demo.</p></div>
+    <div class="tabs" role="tablist" aria-label="Menu categories">
+      <button class="tab" role="tab" aria-selected="true" data-tab="breakfast">Breakfast</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="mains">Main Course</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="snacks">Snacks</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="drinks">Drinks</button>
+    </div>
+    <div class="menu-grid" data-panel="breakfast">
+      <div class="item"><div><h3><span class="veg"></span>Poha Jalebi</h3><p>Indori-style poha with hot jalebi</p></div><span class="dots"></span><b>₹60</b></div>
+      <div class="item"><div><h3><span class="veg"></span>Aloo Paratha</h3><p>Two parathas with curd and pickle</p></div><span class="dots"></span><b>₹90</b></div>
+      <div class="item"><div><h3><span class="veg"></span>Sabudana Khichdi</h3><p>Light, with peanuts and lemon</p></div><span class="dots"></span><b>₹70</b></div>
+      <div class="item"><div><h3><span class="veg"></span>Idli Sambhar</h3><p>Soft idlis with coconut chutney</p></div><span class="dots"></span><b>₹80</b></div>
+    </div>
+    <div class="menu-grid hidden" data-panel="mains">
+      <div class="item"><div><h3><span class="veg"></span>Special Thali</h3><p>2 sabzi, dal, rice, roti, sweet</p></div><span class="dots"></span><b>₹180</b></div>
+      <div class="item"><div><h3><span class="veg"></span>Dal Bafla</h3><p>Malwa classic with ghee and chutney</p></div><span class="dots"></span><b>₹150</b></div>
+      <div class="item"><div><h3><span class="veg"></span>Paneer Butter Masala</h3><p>Rich tomato gravy, soft paneer</p></div><span class="dots"></span><b>₹210</b></div>
+      <div class="item"><div><h3><span class="veg"></span>Veg Biryani</h3><p>Fragrant rice with raita</p></div><span class="dots"></span><b>₹170</b></div>
+    </div>
+    <div class="menu-grid hidden" data-panel="snacks">
+      <div class="item"><div><h3><span class="veg"></span>Paneer Tikka</h3><p>Tandoori paneer, mint chutney</p></div><span class="dots"></span><b>₹190</b></div>
+      <div class="item"><div><h3><span class="veg"></span>Bhutte ka Kees</h3><p>Grated corn cooked with spices</p></div><span class="dots"></span><b>₹90</b></div>
+      <div class="item"><div><h3><span class="veg"></span>Samosa (2 pcs)</h3><p>With sweet and green chutney</p></div><span class="dots"></span><b>₹40</b></div>
+      <div class="item"><div><h3><span class="veg"></span>Pav Bhaji</h3><p>Butter-toasted pav, spicy bhaji</p></div><span class="dots"></span><b>₹120</b></div>
+    </div>
+    <div class="menu-grid hidden" data-panel="drinks">
+      <div class="item"><div><h3><span class="veg"></span>Masala Chai</h3><p>Ginger and cardamom</p></div><span class="dots"></span><b>₹25</b></div>
+      <div class="item"><div><h3><span class="veg"></span>Sweet Lassi</h3><p>Thick, chilled, with malai</p></div><span class="dots"></span><b>₹60</b></div>
+      <div class="item"><div><h3><span class="veg"></span>Cold Coffee</h3><p>With ice cream</p></div><span class="dots"></span><b>₹90</b></div>
+      <div class="item"><div><h3><span class="veg"></span>Fresh Lime Soda</h3><p>Sweet or salted</p></div><span class="dots"></span><b>₹50</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="info" id="visit">
+  <div class="wrap info-grid">
+    <div class="card"><h3>Opening hours</h3><p>Every day<br>8:00 AM – 11:00 PM<br>(sample timings)</p></div>
+    <div class="card"><h3>Find us</h3><p>[Restaurant address]<br>Ujjain, Madhya Pradesh</p></div>
+    <div class="card"><h3>Family &amp; parties</h3><p>Seating for families and small birthday parties. Call ahead for group bookings.</p></div>
+  </div>
+</section>
+
+<section id="order">
+  <div class="wrap order">
+    <span class="eyebrow">Hungry?</span>
+    <h2>Order on WhatsApp, pick up hot in 20 minutes.</h2>
+    <p>Send your order and we will confirm with the total and pickup time.</p>
+    <a href="#order" class="btn btn-chili" onclick="return demoForm(event)">Order on WhatsApp</a>
+  </div>
+</section>
+
+<footer><div class="wrap foot"><span>© Masala Junction (demo) · Ujjain</span><span>Website by <a href="/" style="color:var(--turmeric)">SL Enterprises</a></span></div></footer>
+<div class="toast" id="toast" role="status">This is a demo website – ordering is not connected.</div>
+<script>
+function demoForm(e){e.preventDefault();var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2600);return false;}
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('[data-panel]');
+tabs.forEach(function(tab){tab.addEventListener('click',function(){
+  tabs.forEach(function(t){t.setAttribute('aria-selected','false')});
+  tab.setAttribute('aria-selected','true');
+  panels.forEach(function(p){p.classList.toggle('hidden',p.getAttribute('data-panel')!==tab.getAttribute('data-tab'))});
+});});
+</script>
+</body>
+</html>

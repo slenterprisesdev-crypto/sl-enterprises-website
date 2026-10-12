@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kshipra Tara Residency – Hotel near Mahakal, Ujjain (Demo)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#6B1D1D;--maroon-d:#4A1212;--saffron:#E8862A;--gold:#C9A227;--cream:#FBF6EE;--sand:#F3E7D3;--ink:#2B1A12;--muted:#6E5A4C;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Mulish',system-ui,sans-serif;color:var(--ink);background:var(--cream)}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;margin:0;line-height:1.1}
+p{margin:0}a{color:var(--maroon)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.demo-bar{background:#1d1d1d;color:#eee;font-size:13px;text-align:center;padding:8px 16px}
+.demo-bar a{color:#9cc8ff}
+header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdrop-filter:blur(8px);border-bottom:1px solid #eadbc4}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 24px;max-width:1160px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--maroon)}
+.logo-mark{width:42px;height:42px;border-radius:50%;background:var(--maroon);display:flex;align-items:center;justify-content:center}
+.logo b{font-family:'Cormorant Garamond',serif;font-size:24px;display:block;line-height:1}
+.logo small{font-size:11px;letter-spacing:.2em;color:var(--muted)}
+.menu{display:flex;gap:22px;align-items:center;flex-wrap:wrap;font-weight:600;font-size:15px}
+.menu a{text-decoration:none;color:var(--ink)}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:inherit;font-weight:800;text-decoration:none;border-radius:999px;padding:14px 26px;font-size:15px;transition:transform .2s, box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(107,29,29,.25)}
+.btn-saffron{background:var(--saffron);color:#2B1A12}
+.btn-maroon{background:var(--maroon);color:var(--white)}
+.menu .btn{padding:10px 18px;color:var(--white)}
+
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#3A0E0E 0%,#6B1D1D 55%,#9A3A1A 100%);color:var(--white);padding:80px 0 150px}
+.sun{position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#F2B04A 0%,rgba(232,134,42,.35) 40%,transparent 70%);animation:glow 6s ease-in-out infinite}
+.temple{position:absolute;right:6%;bottom:0;width:min(520px,60vw);opacity:.22}
+.hero-in{position:relative;max-width:640px;display:flex;flex-direction:column;gap:22px}
+.tag{align-self:flex-start;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 14px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{font-size:64px;font-weight:700}
+.hero h1 em{color:#F7C46C;font-style:italic}
+.hero p{font-size:18px;line-height:1.7;color:#F3DCCB}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-line{border:1px solid rgba(255,255,255,.55);color:var(--white)}
+.rise{animation:rise .9s ease both}.r2{animation-delay:.15s}.r3{animation-delay:.3s}.r4{animation-delay:.45s}
+
+.booking{position:relative;margin-top:-80px;z-index:5}
+.book-card{background:var(--white);border-radius:18px;box-shadow:0 24px 60px rgba(43,26,18,.18);padding:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;align-items:end}
+.f{display:flex;flex-direction:column;gap:6px}
+.f label{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.f input,.f select{font:inherit;font-size:15px;padding:13px;border:1px solid #DCCBB2;border-radius:10px;background:var(--cream);color:var(--ink)}
+
+section{padding:96px 0}
+.head{text-align:center;max-width:620px;margin:0 auto 48px;display:flex;flex-direction:column;gap:10px}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--saffron)}
+.head h2{font-size:46px;color:var(--maroon)}
+.head p{color:var(--muted);line-height:1.7}
+
+.rooms{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
+.room{background:var(--white);border-radius:18px;overflow:hidden;border:1px solid #EADBC4;transition:transform .3s, box-shadow .3s}
+.room:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(43,26,18,.14)}
+.room-img{height:210px;position:relative;display:flex;align-items:flex-end;padding:16px}
+.ri1{background:linear-gradient(135deg,#C98B5A,#7A3E22)}
+.ri2{background:linear-gradient(135deg,#D9A75E,#8E4B1E)}
+.ri3{background:linear-gradient(135deg,#9E5B4A,#4A1212)}
+.room-img svg{position:absolute;inset:0;margin:auto;opacity:.35}
+.price{position:relative;background:rgba(255,255,255,.95);border-radius:999px;padding:6px 14px;font-weight:800;font-size:14px;color:var(--maroon)}
+.room-body{padding:22px;display:flex;flex-direction:column;gap:12px}
+.room h3{font-size:28px;color:var(--maroon)}
+.room ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.room li{background:var(--sand);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600}
+
+.amen{background:var(--maroon);color:var(--white)}
+.amen .head h2{color:var(--white)}.amen .head p{color:#F3DCCB}
+.amen-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.am{border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:12px;transition:background .3s}
+.am:hover{background:rgba(255,255,255,.07)}
+.am h3{font-family:'Mulish',sans-serif;font-size:17px;font-weight:800}
+.am p{font-size:14px;color:#F3DCCB;line-height:1.6}
+
+.near-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.near{background:var(--white);border-left:0;border-radius:16px;padding:22px;display:flex;gap:14px;align-items:flex-start;border:1px solid #EADBC4}
+.pin{flex:0 0 44px;height:44px;border-radius:12px;background:var(--sand);display:flex;align-items:center;justify-content:center}
+.near h3{font-family:'Mulish',sans-serif;font-size:17px;font-weight:800}
+.near p{font-size:14px;color:var(--muted);margin-top:4px;line-height:1.5}
+
+.cta{background:var(--sand)}
+.cta-box{display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between}
+.cta h2{font-size:44px;color:var(--maroon);max-width:560px}
+.cta p{color:var(--muted);margin-top:10px}
+footer{background:var(--maroon-d);color:#E9CDBB;padding:28px 0;font-size:14px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:#1d1d1d;color:#fff;padding:14px 20px;border-radius:12px;font-size:14px;transition:transform .35s,visibility .35s;z-index:99;visibility:hidden}
+.toast.show{transform:translateX(-50%) translateY(0);visibility:visible}
+
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes glow{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.08);opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:700px){.hero{padding:56px 0 130px}.hero h1{font-size:42px}.head h2,.cta h2{font-size:34px}.menu .hide{display:none}section{padding:72px 0}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo website (sample design, not a real hotel) · Made by <a href="/">SL Enterprises, Ujjain</a></div>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo">
+      <span class="logo-mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7C46C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.8 4.2L18 7l-3.2 2.8L16 14l-4-2.3L8 14l1.2-4.2L6 7l4.2-.8z"/><path d="M4 22h16M6 22v-5h12v5"/></svg></span>
+      <span><b>Kshipra Tara</b><small>RESIDENCY · UJJAIN</small></span>
+    </a>
+    <nav class="menu">
+      <a href="#rooms" class="hide">Rooms</a>
+      <a href="#amenities" class="hide">Amenities</a>
+      <a href="#nearby" class="hide">Nearby</a>
+      <a href="#book" class="btn btn-maroon">Book Now</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top" style="padding-top:80px">
+  <div class="sun" aria-hidden="true"></div>
+  <svg class="temple" viewBox="0 0 400 260" fill="#F7C46C" aria-hidden="true"><path d="M200 0l10 30h-20zM188 30h24l14 50h-52zM170 80h60l22 70H148zM120 150h160l30 110H90zM60 190h60v70H60zM280 190h60v70h-60z"/></svg>
+  <div class="wrap">
+    <div class="hero-in">
+      <span class="tag rise">Stay close to Shri Mahakaleshwar</span>
+      <h1 class="rise r2">Peaceful rooms for your <em>Ujjain darshan</em></h1>
+      <p class="rise r3">Clean, comfortable family rooms, hot breakfast and help with darshan timings – a calm base for your pilgrimage to the city of Mahakal.</p>
+      <div class="hero-btns rise r4">
+        <a href="#book" class="btn btn-saffron">Check availability</a>
+        <a href="#rooms" class="btn btn-line">View rooms</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap booking" id="book">
+  <form class="book-card" onsubmit="return demoForm(event)">
+    <div class="f"><label for="ci">Check-in</label><input id="ci" type="date" required></div>
+    <div class="f"><label for="co">Check-out</label><input id="co" type="date" required></div>
+    <div class="f"><label for="g">Guests</label><select id="g"><option>1 Guest</option><option selected>2 Guests</option><option>3 Guests</option><option>4+ Guests</option></select></div>
+    <div class="f"><label for="r">Room</label><select id="r"><option>Deluxe Room</option><option>Family Room</option><option>Temple-View Suite</option></select></div>
+    <button class="btn btn-maroon" type="submit">Check availability</button>
+  </form>
+</div>
+
+<section id="rooms">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Our Rooms</span><h2>Rest well after darshan</h2><p>Every room has AC, hot water, fresh linen and free Wi-Fi.</p></div>
+    <div class="rooms">
+      <div class="room">
+        <div class="room-img ri1"><svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.2" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M5 10V6h14v4M3 21v-3M21 21v-3"/></svg><span class="price">Sample price · ₹1,800 / night</span></div>
+        <div class="room-body"><h3>Deluxe Room</h3><p style="color:var(--muted);line-height:1.6">Ideal for couples. Queen bed, work desk and a quiet balcony.</p><ul><li>2 Guests</li><li>AC</li><li>Balcony</li></ul></div>
+      </div>
+      <div class="room">
+        <div class="room-img ri2"><svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.2" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M5 10V6h14v4M3 21v-3M21 21v-3"/></svg><span class="price">Sample price · ₹2,600 / night</span></div>
+        <div class="room-body"><h3>Family Room</h3><p style="color:var(--muted);line-height:1.6">Space for the whole family, with two double beds and extra mattress on request.</p><ul><li>4 Guests</li><li>2 Beds</li><li>Breakfast</li></ul></div>
+      </div>
+      <div class="room">
+        <div class="room-img ri3"><svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.2" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M5 10V6h14v4M3 21v-3M21 21v-3"/></svg><span class="price">Sample price · ₹3,900 / night</span></div>
+        <div class="room-body"><h3>Temple-View Suite</h3><p style="color:var(--muted);line-height:1.6">Our largest room with a sitting area and a terrace view of the city.</p><ul><li>3 Guests</li><li>Sitting area</li><li>Terrace</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="amen" id="amenities">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Amenities</span><h2>Everything a pilgrim needs</h2><p>Simple comforts, done properly.</p></div>
+    <div class="amen-grid">
+      <div class="am"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F7C46C" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg><h3>Darshan help desk</h3><p>Guidance on timings and queues for a smooth visit.</p></div>
+      <div class="am"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F7C46C" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 11h18M5 11V7a7 7 0 0 1 14 0v4M4 15h16l-2 6H6z"/></svg><h3>Pure veg breakfast</h3><p>Fresh, home-style breakfast every morning.</p></div>
+      <div class="am"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F7C46C" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="11" width="18" height="6" rx="2"/><path d="M5 11l2-5h10l2 5M7 17v3M17 17v3"/></svg><h3>Parking &amp; taxi</h3><p>Free parking and local taxi on request.</p></div>
+      <div class="am"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F7C46C" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h0"/></svg><h3>Free Wi-Fi</h3><p>Stay connected in every room.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="nearby">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Explore Ujjain</span><h2>Holy places to visit</h2><p>Our desk can plan a simple route for your family.</p></div>
+    <div class="near-grid">
+      <div class="near"><span class="pin"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B1D1D" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div><h3>Shri Mahakaleshwar</h3><p>One of the twelve Jyotirlingas.</p></div></div>
+      <div class="near"><span class="pin"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B1D1D" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div><h3>Ram Ghat</h3><p>Evening aarti on the banks of the Shipra.</p></div></div>
+      <div class="near"><span class="pin"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B1D1D" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div><h3>Harsiddhi Mata</h3><p>Famous for its lamp pillars.</p></div></div>
+      <div class="near"><span class="pin"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B1D1D" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div><h3>Kal Bhairav</h3><p>An ancient temple of Ujjain.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta-box">
+    <div><h2>Planning your Mahakal yatra?</h2><p>Message us on WhatsApp for room availability and today's rates.</p></div>
+    <a href="#book" class="btn btn-maroon" onclick="return demoForm(event)">Chat on WhatsApp</a>
+  </div>
+</section>
+
+<footer><div class="wrap foot"><span>© Kshipra Tara Residency (demo) · Ujjain, Madhya Pradesh</span><span>Website by <a href="/" style="color:#F7C46C">SL Enterprises</a></span></div></footer>
+
+<div class="toast" id="toast" role="status">This is a demo website – booking is not connected.</div>
+<script>
+function demoForm(e){e.preventDefault();var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2600);return false;}
+</script>
+</body>
+</html>

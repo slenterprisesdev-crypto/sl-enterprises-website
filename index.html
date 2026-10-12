@@ -101,6 +101,10 @@ section.block{padding:88px 0}
 .card h3{font-size:20px}
 .card p,.step p,.proj p{font-size:15px;line-height:1.6;color:var(--muted)}
 .proj{border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;background:var(--white)}
+.grid-proj{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.proj{text-decoration:none;color:var(--text)}
+.proj-shot{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:1px solid var(--line)}
+.proj-link{font-weight:700;color:var(--blue);font-size:15px;margin-top:4px}
 .proj-img{height:200px;background:#DCE3F0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
 .proj-body{padding:22px;display:flex;flex-direction:column;gap:8px}
 .proj-tag{font-size:13px;font-weight:700;color:var(--blue)}
@@ -182,6 +186,7 @@ footer{background:var(--navy-deep);color:#A9B4CC;padding:28px 0;font-size:14px}
     </a>
     <nav class="menu">
       <a href="#services">Services</a>
+      <a href="#projects" class="hide-sm">Projects</a>
       <a href="#process" class="hide-sm">How we work</a>
       <a href="#about" class="hide-sm">About</a>
       <a href="#contact" class="btn btn-blue btn-small">Get a Quote</a>
@@ -201,7 +206,7 @@ footer{background:var(--navy-deep);color:#A9B4CC;padding:28px 0;font-size:14px}
       <p class="fade d2">SL Enterprises builds fast, mobile-friendly websites and web apps for shops, clinics, coaching centres, hotels and growing businesses.</p>
       <div class="hero-btns fade d3">
         <a href="#contact" class="btn btn-blue lift">Start your project</a>
-        <a href="#services" class="btn btn-ghost lift">Our services</a>
+        <a href="#projects" class="btn btn-ghost lift">See our work</a>
       </div>
     </div>
     <div class="mock-area fade d2" aria-hidden="true">
@@ -264,42 +269,54 @@ footer{background:var(--navy-deep);color:#A9B4CC;padding:28px 0;font-size:14px}
   </div>
 </section>
 
-<!-- ===== PROJECTS (hidden until demo projects are ready) =====
+<!-- ===== PROJECTS ===== -->
 <section id="projects" class="block white">
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Our Work</span>
-      <h2>Recent projects</h2>
+      <h2>Sample websites we have built</h2>
+      <p style="color:var(--muted);line-height:1.6">Demo designs to show what your business website can look like. Click to open.</p>
     </div>
-    <div class="grid grid-3">
-      <div class="proj lift">
-        <div class="proj-img">[Project screenshot]</div>
+    <div class="grid grid-proj">
+      <a class="proj lift" href="hotel.html" target="_blank" rel="noopener">
+        <img class="proj-shot" src="hotel-preview.jpg" alt="Kshipra Tara Residency demo website preview" loading="lazy">
         <div class="proj-body">
-          <span class="proj-tag">Business Website</span>
-          <h3>[Project 1 name]</h3>
-          <p>[One line about what was built]</p>
+          <span class="proj-tag">Hotel Website · Demo</span>
+          <h3>Kshipra Tara Residency</h3>
+          <p>Hotel near Mahakal with rooms, amenities and a booking bar.</p>
+          <span class="proj-link">View live demo →</span>
         </div>
-      </div>
-      <div class="proj lift">
-        <div class="proj-img">[Project screenshot]</div>
+      </a>
+      <a class="proj lift" href="coaching.html" target="_blank" rel="noopener">
+        <img class="proj-shot" src="coaching-preview.jpg" alt="Brightpath Academy demo website preview" loading="lazy">
         <div class="proj-body">
-          <span class="proj-tag">Landing Page</span>
-          <h3>[Project 2 name]</h3>
-          <p>[One line about what was built]</p>
+          <span class="proj-tag">Coaching Institute · Demo</span>
+          <h3>Brightpath Academy</h3>
+          <p>Courses, batch timetable and a free demo class form.</p>
+          <span class="proj-link">View live demo →</span>
         </div>
-      </div>
-      <div class="proj lift">
-        <div class="proj-img">[Project screenshot]</div>
+      </a>
+      <a class="proj lift" href="clinic.html" target="_blank" rel="noopener">
+        <img class="proj-shot" src="clinic-preview.jpg" alt="CareWell Family Clinic demo website preview" loading="lazy">
         <div class="proj-body">
-          <span class="proj-tag">Web App</span>
-          <h3>[Project 3 name]</h3>
-          <p>[One line about what was built]</p>
+          <span class="proj-tag">Clinic Website · Demo</span>
+          <h3>CareWell Family Clinic</h3>
+          <p>Services, OPD timings and an appointment form.</p>
+          <span class="proj-link">View live demo →</span>
         </div>
-      </div>
+      </a>
+      <a class="proj lift" href="restaurant.html" target="_blank" rel="noopener">
+        <img class="proj-shot" src="restaurant-preview.jpg" alt="Masala Junction demo website preview" loading="lazy">
+        <div class="proj-body">
+          <span class="proj-tag">Restaurant Website · Demo</span>
+          <h3>Masala Junction</h3>
+          <p>Menu with category tabs and WhatsApp ordering.</p>
+          <span class="proj-link">View live demo →</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
--->
 
 <!-- ===== PROCESS ===== -->
 <section id="process" class="block">

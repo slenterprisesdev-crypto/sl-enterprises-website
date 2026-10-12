@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brightpath Academy – Coaching Classes (Demo)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--green:#0F5132;--green-d:#0A3A24;--lime:#D6F25C;--yellow:#FFD23F;--paper:#F6F8F3;--ink:#11231A;--muted:#506357;--line:#DDE5DA;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Nunito',system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:'Outfit',sans-serif;margin:0;line-height:1.1}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.demo-bar{background:#1d1d1d;color:#eee;font-size:13px;text-align:center;padding:8px 16px}
+.demo-bar a{color:#9cc8ff}
+header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 24px;max-width:1160px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--green);font-family:'Outfit',sans-serif;font-weight:800;font-size:22px}
+.logo span{width:40px;height:40px;border-radius:12px;background:var(--green);display:flex;align-items:center;justify-content:center}
+.menu{display:flex;gap:22px;align-items:center;flex-wrap:wrap;font-weight:700}
+.menu a{color:var(--ink);text-decoration:none}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:inherit;font-weight:800;text-decoration:none;border-radius:12px;padding:14px 24px;font-size:15px;transition:transform .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn-green{background:var(--green);color:var(--white)}
+.btn-lime{background:var(--lime);color:var(--green-d)}
+.menu .btn{color:var(--white);padding:10px 18px}
+
+.hero{background:var(--green);color:var(--white);position:relative;overflow:hidden;padding:80px 0 96px}
+.hero-grid{display:flex;flex-wrap:wrap;gap:48px;align-items:center;position:relative}
+.hero-text{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.chip{align-self:flex-start;background:var(--lime);color:var(--green-d);font-weight:800;font-size:13px;padding:8px 14px;border-radius:999px}
+.hero h1{font-size:58px;font-weight:800}
+.hl{position:relative;white-space:nowrap}
+.hl::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:14px;background:var(--yellow);opacity:.55;z-index:-1;border-radius:4px;transform-origin:left;animation:draw 1s .6s ease both}
+.hl{z-index:0}
+.hero p{font-size:18px;line-height:1.7;color:#CFE3D6}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-out{border:2px solid rgba(255,255,255,.5);color:var(--white)}
+.board{flex:1 1 380px;min-width:0;position:relative}
+.board-card{background:#163F2B;border:8px solid #6B4A2B;border-radius:16px;padding:30px;font-family:'Outfit',sans-serif;color:#F2F7EE;min-height:300px;display:flex;flex-direction:column;gap:18px;box-shadow:0 30px 60px rgba(0,0,0,.3)}
+.board-card .eq{font-size:30px;opacity:.95}
+.board-card .line{height:2px;background:rgba(255,255,255,.25)}
+.float{position:absolute;background:var(--white);color:var(--ink);border-radius:14px;padding:12px 16px;font-weight:800;font-size:14px;box-shadow:0 14px 30px rgba(0,0,0,.25);display:flex;gap:8px;align-items:center;animation:bob 4s ease-in-out infinite}
+.f1{left:-16px;bottom:-18px}.f2{right:-12px;top:-18px;animation-delay:1.2s}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(214,242,92,.18) 1.5px,transparent 1.5px);background-size:26px 26px;pointer-events:none}
+
+section{padding:92px 0}
+.head{max-width:620px;margin-bottom:44px;display:flex;flex-direction:column;gap:10px}
+.eyebrow{font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#2E8B57}
+.head h2{font-size:42px;color:var(--green-d)}
+.head p{color:var(--muted);line-height:1.7}
+
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.course{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px;transition:transform .25s, box-shadow .25s;position:relative;overflow:hidden}
+.course:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(15,81,50,.12)}
+.course::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:var(--c)}
+.course h3{font-size:22px;color:var(--green-d)}
+.course p{color:var(--muted);line-height:1.6;font-size:15px}
+.meta{display:flex;gap:8px;flex-wrap:wrap}
+.meta span{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:13px;font-weight:700}
+
+.why{background:var(--white)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.w{display:flex;flex-direction:column;gap:10px}
+.w .ic{width:52px;height:52px;border-radius:14px;background:#E8F5D0;display:flex;align-items:center;justify-content:center}
+.w h3{font-size:19px}.w p{color:var(--muted);line-height:1.6;font-size:15px}
+
+.table-box{overflow-x:auto;background:var(--white);border:1px solid var(--line);border-radius:16px}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
+th{background:var(--green);color:var(--white);font-family:'Outfit',sans-serif;font-weight:700}
+tr:last-child td{border-bottom:none}
+.seat{display:inline-block;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:800}
+.open{background:#E3F7D2;color:#1C6B2A}.few{background:#FFF0C2;color:#7A5300}
+
+.enq{background:var(--green-d);color:var(--white)}
+.enq-grid{display:flex;flex-wrap:wrap;gap:44px;align-items:center}
+.enq-text{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.enq h2{font-size:42px}
+.enq p{color:#CFE3D6;line-height:1.7}
+form{flex:1 1 380px;min-width:0;background:var(--white);color:var(--ink);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px}
+.f{display:flex;flex-direction:column;gap:6px}
+label{font-weight:800;font-size:14px}
+input,select{font:inherit;font-size:15px;padding:13px;border:1px solid #C9D6C5;border-radius:10px}
+footer{background:#06281A;color:#A9C3B3;padding:26px 0;font-size:14px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:#1d1d1d;color:#fff;padding:14px 20px;border-radius:12px;font-size:14px;transition:transform .35s,visibility .35s;z-index:99;visibility:hidden}
+.toast.show{transform:translateX(-50%) translateY(0);visibility:visible}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:700px){.hero h1{font-size:38px}.head h2,.enq h2{font-size:32px}.menu .hide{display:none}section{padding:70px 0}.f1,.f2{display:none}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo website (sample design, not a real institute) · Made by <a href="/">SL Enterprises, Ujjain</a></div>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D6F25C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></span>Brightpath Academy</a>
+    <nav class="menu">
+      <a href="#courses" class="hide">Courses</a>
+      <a href="#batches" class="hide">Batches</a>
+      <a href="#why" class="hide">Why us</a>
+      <a href="#enquire" class="btn btn-green">Free Demo Class</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="dots" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="chip">Admissions open · New batches</span>
+      <h1>Strong basics today, <span class="hl">top results</span> tomorrow.</h1>
+      <p>Small batches, regular tests and teachers who explain until it clicks – for Classes 8 to 12 and JEE / NEET foundation.</p>
+      <div class="hero-btns">
+        <a href="#enquire" class="btn btn-lime">Book a free demo class</a>
+        <a href="#courses" class="btn btn-out">See courses</a>
+      </div>
+    </div>
+    <div class="board" aria-hidden="true">
+      <div class="float f2">✓ Weekly tests</div>
+      <div class="board-card">
+        <div class="eq">a² + b² = c²</div><div class="line"></div>
+        <div class="eq">F = m × a</div><div class="line"></div>
+        <div class="eq">H₂O → 2H + O</div>
+      </div>
+      <div class="float f1">✓ Doubt sessions daily</div>
+    </div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Courses</span><h2>Pick the right course</h2><p>Every course includes notes, weekly tests and parent updates.</p></div>
+    <div class="courses">
+      <div class="course" style="--c:#FFD23F"><h3>Class 8 – 10 Foundation</h3><p>Maths and Science with strong concepts, for board exams and beyond.</p><div class="meta"><span>Maths</span><span>Science</span><span>Board prep</span></div></div>
+      <div class="course" style="--c:#7FD3A8"><h3>Class 11 – 12 Science</h3><p>Physics, Chemistry and Maths/Biology with board and competitive focus.</p><div class="meta"><span>PCM</span><span>PCB</span><span>Boards</span></div></div>
+      <div class="course" style="--c:#D6F25C"><h3>JEE / NEET Foundation</h3><p>Early start for entrance exams with problem-solving practice.</p><div class="meta"><span>JEE</span><span>NEET</span><span>Mock tests</span></div></div>
+      <div class="course" style="--c:#9CC8FF"><h3>Spoken English</h3><p>Confidence-building speaking practice for students and working people.</p><div class="meta"><span>Speaking</span><span>Grammar</span><span>Interview</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Why Brightpath</span><h2>Learning that actually sticks</h2></div>
+    <div class="why-grid">
+      <div class="w"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0F5132" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M17 11a3 3 0 1 0 0-6M21 20a6 6 0 0 0-4-5.6"/></svg></span><h3>Small batches</h3><p>Every student gets attention and can ask questions freely.</p></div>
+      <div class="w"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0F5132" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></span><h3>Weekly tests</h3><p>Regular tests with marks shared so progress is always clear.</p></div>
+      <div class="w"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0F5132" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><h3>Daily doubt time</h3><p>A fixed slot every day only for clearing doubts.</p></div>
+      <div class="w"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0F5132" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/></svg></span><h3>Parent updates</h3><p>Attendance and test results shared with parents on WhatsApp.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="batches">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Batch timings</span><h2>Choose a time that suits you</h2><p>Sample timetable – timings shown are for demo.</p></div>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Course</th><th>Days</th><th>Time</th><th>Seats</th></tr></thead>
+        <tbody>
+          <tr><td>Class 9 – 10 Maths &amp; Science</td><td>Mon – Sat</td><td>4:00 – 5:30 PM</td><td><span class="seat open">Open</span></td></tr>
+          <tr><td>Class 11 – 12 PCM</td><td>Mon – Sat</td><td>6:00 – 7:30 AM</td><td><span class="seat few">Few left</span></td></tr>
+          <tr><td>Class 11 – 12 PCB</td><td>Mon – Sat</td><td>5:45 – 7:15 PM</td><td><span class="seat open">Open</span></td></tr>
+          <tr><td>JEE / NEET Foundation</td><td>Sat – Sun</td><td>10:00 AM – 1:00 PM</td><td><span class="seat few">Few left</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="enq" id="enquire">
+  <div class="wrap enq-grid">
+    <div class="enq-text"><span class="eyebrow" style="color:var(--lime)">Free demo class</span><h2>Come, sit in a class, then decide.</h2><p>Fill the form and we will call you to fix a time for a free demo class.</p></div>
+    <form onsubmit="return demoForm(event)">
+      <div class="f"><label for="n">Student name</label><input id="n" required placeholder="Full name"></div>
+      <div class="f"><label for="p">Parent's phone</label><input id="p" type="tel" required placeholder="10-digit number"></div>
+      <div class="f"><label for="c">Class / course</label><select id="c"><option>Class 8 – 10</option><option>Class 11 – 12 Science</option><option>JEE / NEET Foundation</option><option>Spoken English</option></select></div>
+      <button class="btn btn-green" type="submit">Book free demo</button>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap foot"><span>© Brightpath Academy (demo)</span><span>Website by <a href="/" style="color:var(--lime)">SL Enterprises</a></span></div></footer>
+<div class="toast" id="toast" role="status">This is a demo website – the form is not connected.</div>
+<script>function demoForm(e){e.preventDefault();var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2600);return false;}</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CareWell Family Clinic (Demo)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0E7C7B;--teal-d:#095856;--mint:#E4F4F1;--coral:#F2715A;--ink:#15302F;--muted:#4F6766;--line:#D7E7E4;--bg:#F7FBFA;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Source Sans 3',system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:17px}
+h1,h2,h3{font-family:'Lexend',sans-serif;margin:0;line-height:1.15}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.demo-bar{background:#1d1d1d;color:#eee;font-size:13px;text-align:center;padding:8px 16px}
+.demo-bar a{color:#9cc8ff}
+.topline{background:var(--teal-d);color:#D9F0EC;font-size:14px}
+.topline .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding-top:8px;padding-bottom:8px}
+header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 24px;max-width:1160px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--teal-d);font-family:'Lexend',sans-serif;font-weight:700;font-size:21px}
+.logo span{width:40px;height:40px;border-radius:50%;background:var(--mint);display:flex;align-items:center;justify-content:center}
+.menu{display:flex;gap:22px;align-items:center;flex-wrap:wrap;font-weight:600}
+.menu a{color:var(--ink);text-decoration:none}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:'Lexend',sans-serif;font-weight:600;text-decoration:none;border-radius:999px;padding:14px 24px;font-size:15px;transition:transform .2s, box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(14,124,123,.25)}
+.btn-teal{background:var(--teal);color:var(--white)}
+.btn-coral{background:var(--coral);color:#2A0F0A}
+.btn-soft{background:var(--white);color:var(--teal-d);border:1px solid var(--line)}
+.menu .btn{color:var(--white);padding:10px 18px}
+
+.hero{background:linear-gradient(180deg,var(--mint),var(--bg));padding:72px 0 88px;overflow:hidden}
+.hero-grid{display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+.hero-text{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.badge{align-self:flex-start;display:flex;gap:8px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:600;font-size:14px}
+.live{width:8px;height:8px;border-radius:50%;background:#22A06B;animation:pulse 2s infinite}
+.hero h1{font-size:54px;color:var(--teal-d)}
+.hero p{font-size:19px;line-height:1.65;color:var(--muted)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px}
+.art{flex:1 1 380px;min-width:0;position:relative;height:380px}
+.blob{position:absolute;inset:20px;border-radius:42% 58% 55% 45% / 50% 40% 60% 50%;background:var(--teal);animation:morph 10s ease-in-out infinite}
+.art svg.cross{position:absolute;inset:0;margin:auto;width:150px;height:150px}
+.pill{position:absolute;background:var(--white);border-radius:14px;padding:12px 16px;box-shadow:0 14px 30px rgba(9,88,86,.18);font-weight:700;font-size:15px;display:flex;gap:10px;align-items:center;animation:bob 5s ease-in-out infinite}
+.p1{left:-6px;top:40px}.p2{right:-6px;bottom:40px;animation-delay:1.5s}
+.pill small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+
+section{padding:88px 0}
+.head{max-width:600px;margin-bottom:40px;display:flex;flex-direction:column;gap:10px}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.head h2{font-size:40px;color:var(--teal-d)}
+.head p{color:var(--muted);line-height:1.65}
+
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.s{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:transform .25s, border-color .25s}
+.s:hover{transform:translateY(-6px);border-color:var(--teal)}
+.s .ic{width:54px;height:54px;border-radius:16px;background:var(--mint);display:flex;align-items:center;justify-content:center}
+.s h3{font-size:19px}.s p{color:var(--muted);line-height:1.55;font-size:16px}
+
+.doc{background:var(--white)}
+.doc-grid{display:flex;flex-wrap:wrap;gap:44px;align-items:center}
+.doc-photo{flex:1 1 320px;min-width:0;height:360px;border-radius:24px;background:linear-gradient(160deg,#BFE3DD,#7CC2B9);display:flex;align-items:center;justify-content:center;color:var(--teal-d);font-weight:600}
+.doc-text{flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.doc-text h2{font-size:38px;color:var(--teal-d)}
+.doc-text p{color:var(--muted);line-height:1.7}
+.creds{display:flex;flex-wrap:wrap;gap:10px}
+.creds span{background:var(--mint);border-radius:999px;padding:7px 14px;font-weight:600;font-size:14px;color:var(--teal-d)}
+
+.hours-grid{display:flex;flex-wrap:wrap;gap:28px}
+.hours{flex:1 1 360px;min-width:0;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px}
+.hours h3{margin-bottom:14px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border-bottom:none}
+.row b{font-weight:700}
+form{flex:1 1 380px;min-width:0;background:var(--teal);color:var(--white);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px}
+form h3{font-size:24px}
+.f{display:flex;flex-direction:column;gap:6px}
+label{font-weight:700;font-size:15px}
+input,select{font:inherit;font-size:16px;padding:13px;border:none;border-radius:10px;color:var(--ink)}
+.emerg{background:#FFF1EE;border:1px solid #F8C9BF;border-radius:14px;padding:16px 18px;margin-top:18px;color:#7A2414;font-size:15px}
+footer{background:var(--teal-d);color:#CDE8E4;padding:26px 0;font-size:14px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:#1d1d1d;color:#fff;padding:14px 20px;border-radius:12px;font-size:14px;transition:transform .35s,visibility .35s;z-index:99;visibility:hidden}
+.toast.show{transform:translateX(-50%) translateY(0);visibility:visible}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,160,107,.6)}70%{box-shadow:0 0 0 10px rgba(34,160,107,0)}100%{box-shadow:0 0 0 0 rgba(34,160,107,0)}}
+@keyframes morph{0%,100%{border-radius:42% 58% 55% 45% / 50% 40% 60% 50%}50%{border-radius:58% 42% 40% 60% / 40% 60% 40% 60%}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:700px){.hero h1{font-size:38px}.head h2,.doc-text h2{font-size:30px}.menu .hide{display:none}section{padding:68px 0}.art{height:300px}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo website (sample design, not a real clinic) · Made by <a href="/">SL Enterprises, Ujjain</a></div>
+<div class="topline"><div class="wrap"><span>Open Mon – Sat · Sunday morning OPD</span><span>Call: +91 XXXXX XXXXX</span></div></div>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>CareWell Clinic</a>
+    <nav class="menu">
+      <a href="#services" class="hide">Services</a>
+      <a href="#doctor" class="hide">Doctor</a>
+      <a href="#timings" class="hide">Timings</a>
+      <a href="#appointment" class="btn btn-teal">Book Appointment</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="badge"><span class="live"></span>OPD open today</span>
+      <h1>Caring for your whole family, every day.</h1>
+      <p>General check-ups, child care, diabetes and BP follow-ups – with short waiting time and a doctor who listens.</p>
+      <div class="hero-btns">
+        <a href="#appointment" class="btn btn-teal">Book appointment</a>
+        <a href="#timings" class="btn btn-soft">Clinic timings</a>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <div class="blob"></div>
+      <svg class="cross" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/><path d="M7 12h3l1.5-3 2 6 1.5-3H17"/></svg>
+      <div class="pill p1">✓ <span>Short wait<small>Token by WhatsApp</small></span></div>
+      <div class="pill p2">✓ <span>Lab tests<small>Sample collection</small></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Services</span><h2>How we can help</h2><p>Everyday health care for all ages, under one roof.</p></div>
+    <div class="svc">
+      <div class="s"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 3v6a6 6 0 0 0 12 0V3M12 15v2a4 4 0 0 0 8 0v-2"/><circle cx="20" cy="13" r="2"/></svg></span><h3>General check-up</h3><p>Fever, cold, cough, infections and regular health checks.</p></div>
+      <div class="s"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></span><h3>Child care</h3><p>Growth checks, vaccination guidance and common illnesses.</p></div>
+      <div class="s"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span><h3>BP &amp; sugar follow-up</h3><p>Regular monitoring and long-term care plans.</p></div>
+      <div class="s"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 2v6L4 18a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3L15 8V2M8 2h8"/></svg></span><h3>Lab tests</h3><p>Blood and urine sample collection with reports on WhatsApp.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="doc" id="doctor">
+  <div class="wrap doc-grid">
+    <div class="doc-photo">[Doctor photo]</div>
+    <div class="doc-text">
+      <span class="eyebrow">Meet the doctor</span>
+      <h2>Dr. [Doctor name]</h2>
+      <p>[Qualification and experience go here.] A family doctor who takes time to explain the problem and the treatment in simple words.</p>
+      <div class="creds"><span>[Degree]</span><span>[Years] experience</span><span>Family medicine</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="timings">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Timings &amp; appointment</span><h2>Visit us at a time that suits you</h2><p>Sample timings shown for demo.</p></div>
+    <div class="hours-grid">
+      <div class="hours">
+        <h3>OPD timings</h3>
+        <div class="row"><span>Monday – Friday</span><b>10:00 AM – 1:30 PM</b></div>
+        <div class="row"><span>Monday – Friday</span><b>6:00 PM – 9:00 PM</b></div>
+        <div class="row"><span>Saturday</span><b>10:00 AM – 2:00 PM</b></div>
+        <div class="row"><span>Sunday</span><b>10:00 AM – 12:00 PM</b></div>
+        <div class="emerg">In a medical emergency, please go to the nearest hospital or call 108.</div>
+      </div>
+      <form id="appointment" onsubmit="return demoForm(event)">
+        <h3>Book an appointment</h3>
+        <div class="f"><label for="pn">Patient name</label><input id="pn" required placeholder="Full name"></div>
+        <div class="f"><label for="ph">Phone</label><input id="ph" type="tel" required placeholder="10-digit number"></div>
+        <div class="f"><label for="d">Preferred date</label><input id="d" type="date" required></div>
+        <div class="f"><label for="sl">Time</label><select id="sl"><option>Morning</option><option>Evening</option></select></div>
+        <button class="btn btn-coral" type="submit">Request appointment</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap foot"><span>© CareWell Family Clinic (demo)</span><span>Website by <a href="/" style="color:#fff">SL Enterprises</a></span></div></footer>
+<div class="toast" id="toast" role="status">This is a demo website – the form is not connected.</div>
+<script>function demoForm(e){e.preventDefault();var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2600);return false;}</script>
+</body>
+</html>
