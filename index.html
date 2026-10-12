@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SL Enterprises – Website &amp; App Development in Ujjain</title>
-<meta name="description" content="SL Enterprises, Ujjain (Madhya Pradesh), builds fast, mobile-friendly websites, landing pages and web apps for shops, clinics, coaching centres, hotels and growing businesses.">
+<meta name="description" content="SL Enterprises, Ujjain (Madhya Pradesh), builds fast, mobile-friendly websites, landing pages, web apps and AI videos for shops, clinics, coaching centres, hotels and growing businesses.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,6 +96,8 @@ section.block{padding:88px 0}
 .head h2{font-weight:700;font-size:38px;line-height:1.2}
 .grid{display:grid;gap:20px}
 .grid-4{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.grid-5{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.grid-5 .card{padding:24px}
 .grid-3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
 .card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:14px}
 .card h3{font-size:20px}
@@ -105,6 +107,20 @@ section.block{padding:88px 0}
 .proj{text-decoration:none;color:var(--text)}
 .proj-shot{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:1px solid var(--line)}
 .proj-link{font-weight:700;color:var(--blue);font-size:15px;margin-top:4px}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;align-items:stretch}
+.plan{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:14px;position:relative}
+.plan.best{border:2px solid var(--blue);box-shadow:0 18px 40px rgba(1,101,212,.12)}
+.plan-flag{position:absolute;top:-13px;left:24px;background:var(--blue);color:var(--white);font-size:12px;font-weight:700;letter-spacing:.06em;padding:5px 12px;border-radius:999px}
+.plan h3{font-size:20px}
+.plan-price{font-family:'Sora',sans-serif;font-weight:800;font-size:34px;color:var(--text)}
+.plan-price small{display:block;font-family:'DM Sans',sans-serif;font-weight:500;font-size:14px;color:var(--muted)}
+.plan ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;flex-grow:1}
+.plan li{display:flex;gap:10px;font-size:15px;line-height:1.5;color:var(--muted)}
+.plan li::before{content:"";flex:0 0 18px;height:18px;margin-top:2px;border-radius:50%;background:#E3EEFB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230165D4' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/12px no-repeat}
+.plan .btn{text-align:center}
+.btn-outline{border:1px solid var(--blue);color:var(--blue);background:var(--white)}
+.btn-outline:hover{background:#EEF5FD;color:var(--blue)}
+.price-note{margin-top:22px;font-size:14px;color:var(--muted);line-height:1.6}
 .proj-img{height:200px;background:#DCE3F0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
 .proj-body{padding:22px;display:flex;flex-direction:column;gap:8px}
 .proj-tag{font-size:13px;font-weight:700;color:var(--blue)}
@@ -186,6 +202,7 @@ footer{background:var(--navy-deep);color:#A9B4CC;padding:28px 0;font-size:14px}
     </a>
     <nav class="menu">
       <a href="#services">Services</a>
+      <a href="#pricing" class="hide-sm">Pricing</a>
       <a href="#projects" class="hide-sm">Projects</a>
       <a href="#process" class="hide-sm">How we work</a>
       <a href="#about" class="hide-sm">About</a>
@@ -203,7 +220,7 @@ footer{background:var(--navy-deep);color:#A9B4CC;padding:28px 0;font-size:14px}
     <div class="hero-text">
       <span class="pill fade"><span class="dot"></span>Taking new projects · Ujjain, Madhya Pradesh</span>
       <h1 class="fade d1">Websites that bring customers to your <span class="typed"><span id="word">shop.</span><span class="cursor"></span></span></h1>
-      <p class="fade d2">SL Enterprises builds fast, mobile-friendly websites and web apps for shops, clinics, coaching centres, hotels and growing businesses.</p>
+      <p class="fade d2">SL Enterprises builds fast, mobile-friendly websites, web apps and eye-catching videos for shops, clinics, coaching centres, hotels and growing businesses.</p>
       <div class="hero-btns fade d3">
         <a href="#contact" class="btn btn-blue lift">Start your project</a>
         <a href="#projects" class="btn btn-ghost lift">See our work</a>
@@ -232,8 +249,8 @@ footer{background:var(--navy-deep);color:#A9B4CC;padding:28px 0;font-size:14px}
 <!-- ===== MOVING STRIP ===== -->
 <div class="strip" aria-hidden="true">
   <div class="strip-track">
-    <span>Business Websites</span><span>✦</span><span>Landing Pages</span><span>✦</span><span>Web Apps</span><span>✦</span><span>Dashboards</span><span>✦</span><span>Website Fixing</span><span>✦</span><span>Google Setup</span><span>✦</span>
-    <span>Business Websites</span><span>✦</span><span>Landing Pages</span><span>✦</span><span>Web Apps</span><span>✦</span><span>Dashboards</span><span>✦</span><span>Website Fixing</span><span>✦</span><span>Google Setup</span><span>✦</span>
+    <span>Business Websites</span><span>✦</span><span>Landing Pages</span><span>✦</span><span>Web Apps</span><span>✦</span><span>Dashboards</span><span>✦</span><span>Website Fixing</span><span>✦</span><span>Google Setup</span><span>✦</span><span>Video Editing</span><span>✦</span><span>AI Videos</span><span>✦</span>
+    <span>Business Websites</span><span>✦</span><span>Landing Pages</span><span>✦</span><span>Web Apps</span><span>✦</span><span>Dashboards</span><span>✦</span><span>Website Fixing</span><span>✦</span><span>Google Setup</span><span>✦</span><span>Video Editing</span><span>✦</span><span>AI Videos</span><span>✦</span>
   </div>
 </div>
 
@@ -244,7 +261,7 @@ footer{background:var(--navy-deep);color:#A9B4CC;padding:28px 0;font-size:14px}
       <span class="eyebrow">Services</span>
       <h2>What we build for you</h2>
     </div>
-    <div class="grid grid-4">
+    <div class="grid grid-5">
       <div class="card lift">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0165D4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8M12 18v3"/></svg>
         <h3>Business Websites</h3>
@@ -265,7 +282,73 @@ footer{background:var(--navy-deep);color:#A9B4CC;padding:28px 0;font-size:14px}
         <h3>Website Fix &amp; Update</h3>
         <p>Already have a website? We fix errors, update content, improve speed and set it up for Google.</p>
       </div>
+      <div class="card lift">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0165D4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3"/><path d="M8 9.5v5l4-2.5z"/></svg>
+        <h3>Video Editing &amp; AI Videos</h3>
+        <p>Reels, YouTube videos, ads and AI-generated videos for your brand – edited to grab attention on social media.</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing" class="block">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Pricing</span>
+      <h2>Simple, honest pricing</h2>
+      <p style="color:var(--muted);line-height:1.6">Clear starting prices. Final price depends on your pages and features – we confirm it before any work begins.</p>
+    </div>
+    <div class="price-grid">
+      <div class="plan">
+        <h3>Starter Website</h3>
+        <div class="plan-price">₹4,999<small>starting price · one-time</small></div>
+        <ul>
+          <li>1-page website</li>
+          <li>Mobile-friendly design</li>
+          <li>WhatsApp chat button</li>
+          <li>Enquiry form</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Get started</a>
+      </div>
+      <div class="plan best">
+        <span class="plan-flag">RECOMMENDED</span>
+        <h3>Business Website</h3>
+        <div class="plan-price">₹9,999<small>starting price · one-time</small></div>
+        <ul>
+          <li>4–6 sections or pages</li>
+          <li>Your logo and branding</li>
+          <li>Google Maps &amp; WhatsApp</li>
+          <li>Enquiry form with email alerts</li>
+          <li>Basic Google setup</li>
+        </ul>
+        <a href="#contact" class="btn btn-blue">Get started</a>
+      </div>
+      <div class="plan">
+        <h3>Website Care</h3>
+        <div class="plan-price">₹500<small>starting price · per month</small></div>
+        <ul>
+          <li>Text, photo and price updates</li>
+          <li>Small fixes</li>
+          <li>WhatsApp support</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Get started</a>
+      </div>
+      <div class="plan">
+        <h3>Video Editing &amp; AI Videos</h3>
+        <div class="plan-price">₹499<small>starting price · per reel</small></div>
+        <ul>
+          <li>Reel / Short (up to 60 sec) – from ₹499</li>
+          <li>AI video (up to 60 sec) – from ₹999</li>
+          <li>YouTube video (up to 10 min) – from ₹1,499</li>
+          <li>Ad / promo video – from ₹2,999</li>
+          <li>Monthly pack: 10 reels – ₹3,999</li>
+          <li>2 rounds of changes included</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Get started</a>
+      </div>
+    </div>
+    <p class="price-note">Domain name (like yourbusiness.in) is charged at actual cost. 50% advance to start, balance before the website goes live.</p>
   </div>
 </section>
 
@@ -352,7 +435,7 @@ footer{background:var(--navy-deep);color:#A9B4CC;padding:28px 0;font-size:14px}
 <section id="contact" class="contact">
   <div class="wrap contact-grid">
     <div class="contact-info">
-      <h2>Let's build your website</h2>
+      <h2>Let's build something for your business</h2>
       <p>Send us a message or chat on WhatsApp. We usually reply the same day.</p>
       <a class="wa" href="https://wa.me/918319881971?text=Hi%20SL%20Enterprises%2C%20I%20need%20a%20website" target="_blank" rel="noopener">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
@@ -382,6 +465,7 @@ footer{background:var(--navy-deep);color:#A9B4CC;padding:28px 0;font-size:14px}
           <option>Landing Page</option>
           <option>Web App / Dashboard</option>
           <option>Fix / Update my website</option>
+          <option>Video Editing / AI Video</option>
         </select>
       </div>
       <div class="field">
