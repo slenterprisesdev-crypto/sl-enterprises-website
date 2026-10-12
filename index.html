@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SL Enterprises – Website &amp; App Development</title>
+<meta name="description" content="SL Enterprises builds fast, mobile-friendly websites, landing pages and web apps for shops, clinics, coaching centres, hotels and growing businesses.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0165D4;
+  --blue-light:#5AAEFF;
+  --navy:#0B1B3F;
+  --navy-deep:#071230;
+  --text:#0B1B3F;
+  --muted:#4A5878;
+  --line:#E2E6EF;
+  --bg:#F7F8FB;
+  --white:#FFFFFF;
+  --green:#1F8A4C;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif;color:var(--text);background:var(--bg)}
+h1,h2,h3{font-family:'Sora',sans-serif;margin:0}
+p{margin:0}
+a{color:var(--blue)}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ---------- Header ---------- */
+header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+.brand img{height:48px;width:auto}
+.brand-name{font-family:'Sora',sans-serif;font-weight:800;font-size:20px;letter-spacing:.02em}
+.brand-name span{color:var(--blue)}
+.brand-tag{display:block;font-size:11px;letter-spacing:.18em;color:var(--muted)}
+.menu{display:flex;flex-wrap:wrap;align-items:center;gap:24px;font-weight:500}
+.menu a{color:var(--text);text-decoration:none}
+.menu a:hover{color:var(--blue)}
+.menu a.btn-blue,.menu a.btn-blue:hover{color:var(--white)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:16px;padding:15px 26px;border-radius:10px;border:none;cursor:pointer;font-family:inherit}
+.btn-blue{background:var(--blue);color:var(--white)}
+.btn-blue:hover{background:#0154B2;color:var(--white)}
+.btn-ghost{border:1px solid #5A6E99;color:var(--white);font-weight:500}
+.btn-small{padding:11px 18px;font-size:15px}
+.lift{transition:transform .25s ease, box-shadow .25s ease}
+.lift:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(11,27,63,.14)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;background:var(--navy);color:var(--white);padding:72px 0 96px}
+.blob{position:absolute;border-radius:50%;pointer-events:none}
+.blob-a{top:-120px;left:-80px;width:420px;height:420px;background:var(--blue);opacity:.35;filter:blur(80px);animation:blobA 14s ease-in-out infinite}
+.blob-b{bottom:-160px;right:-60px;width:480px;height:480px;background:#38BDF8;opacity:.25;filter:blur(90px);animation:blobB 18s ease-in-out infinite}
+.ring{position:absolute;top:60px;right:38%;width:160px;height:160px;border:2px dashed #3B4F7D;border-radius:50%;animation:spin 30s linear infinite;pointer-events:none}
+.hero-grid{position:relative;display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+.hero-text{flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.pill{align-self:flex-start;display:flex;align-items:center;gap:10px;border:1px solid #3B4F7D;color:#E6EAF3;font-size:14px;padding:8px 14px;border-radius:999px}
+.dot{width:8px;height:8px;border-radius:50%;background:#34D399;animation:pulse 2s infinite}
+.hero h1{font-weight:800;font-size:52px;line-height:1.12}
+.typed{color:var(--blue-light);white-space:nowrap}
+.cursor{display:inline-block;width:4px;height:.9em;margin-left:4px;vertical-align:-.08em;background:var(--blue-light);animation:blink 1s step-end infinite}
+.hero p{font-size:19px;line-height:1.6;color:#C7D0E3}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px}
+.fade{animation:fadeUp .8s ease both}
+.d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}
+
+.mock-area{flex:1 1 420px;min-width:0;position:relative}
+.badge{position:absolute;z-index:2;display:flex;align-items:center;gap:8px;background:var(--white);color:var(--text);font-size:14px;font-weight:700;padding:10px 14px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.badge-1{top:-18px;left:-14px;animation:floatY 4s ease-in-out infinite}
+.badge-2{bottom:-20px;right:-10px;animation:floatY 5s 1s ease-in-out infinite}
+.badge-3{top:45%;right:-18px;background:var(--green);color:var(--white);animation:floatY 4.5s .5s ease-in-out infinite}
+.mock{background:var(--white);border-radius:16px;padding:16px;box-shadow:0 24px 60px rgba(0,0,0,.35);animation:floatY 6s ease-in-out infinite}
+.mock-dots{display:flex;gap:6px;padding-bottom:12px}
+.mock-dots span{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.mock-body{background:#EEF2FA;border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.bar{border-radius:4px}
+.mock-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding-top:8px}
+.mock-cards div{height:70px;background:var(--white);border-radius:8px}
+
+/* ---------- Moving strip ---------- */
+.strip{background:var(--blue);color:var(--white);overflow:hidden;padding:16px 0}
+.strip-track{display:flex;width:max-content;gap:40px;font-family:'Sora',sans-serif;font-weight:700;font-size:20px;white-space:nowrap;animation:marquee 22s linear infinite}
+
+/* ---------- Sections ---------- */
+section.block{padding:88px 0}
+.white{background:var(--white)}
+.head{display:flex;flex-direction:column;gap:12px;max-width:640px;margin-bottom:40px}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.head h2{font-weight:700;font-size:38px;line-height:1.2}
+.grid{display:grid;gap:20px}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.card h3{font-size:20px}
+.card p,.step p,.proj p{font-size:15px;line-height:1.6;color:var(--muted)}
+.proj{border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;background:var(--white)}
+.proj-img{height:200px;background:#DCE3F0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
+.proj-body{padding:22px;display:flex;flex-direction:column;gap:8px}
+.proj-tag{font-size:13px;font-weight:700;color:var(--blue)}
+.proj h3{font-size:19px}
+.step{display:flex;flex-direction:column;gap:10px}
+.step-num{font-family:'Sora',sans-serif;font-weight:800;font-size:36px;color:var(--blue)}
+.step h3{font-size:19px}
+
+.about{display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+.about-logo{flex:1 1 360px;min-width:0;height:360px;background:var(--white);border:1px solid var(--line);border-radius:16px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.about-logo img{height:100%;width:auto;object-fit:contain}
+.about-text{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.about-text h2{font-size:38px;line-height:1.2}
+.about-text p{font-size:17px;line-height:1.7;color:var(--muted)}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--navy);color:var(--white);padding:88px 0}
+.contact-grid{display:flex;flex-wrap:wrap;gap:48px}
+.contact-info{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.contact-info h2{font-size:38px;line-height:1.2}
+.contact-info p{font-size:17px;line-height:1.7;color:#C7D0E3}
+.wa{align-self:flex-start;display:flex;align-items:center;gap:10px;background:var(--green);color:var(--white);text-decoration:none;font-weight:700;font-size:16px;padding:16px 24px;border-radius:10px}
+.wa:hover{color:var(--white);background:#18733F}
+.details{display:flex;flex-direction:column;gap:8px;font-size:16px;color:#E6EAF3}
+.details a{color:#E6EAF3}
+form{flex:1 1 420px;min-width:0;background:var(--white);color:var(--text);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+label{font-size:14px;font-weight:700}
+input,select,textarea{font:inherit;font-size:16px;padding:14px;border:1px solid #B9C3D8;border-radius:8px;background:var(--white);color:var(--text)}
+textarea{resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:1px}
+.hidden{display:none}
+
+footer{background:var(--navy-deep);color:#A9B4CC;padding:28px 0;font-size:14px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.foot-left{display:flex;align-items:center;gap:12px}
+.foot-logo{background:var(--white);border-radius:8px;padding:6px;display:flex}
+.foot-logo img{height:28px;width:auto}
+
+/* ---------- Animations ---------- */
+@keyframes blobA{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(120px,-60px) scale(1.15)}66%{transform:translate(-80px,50px) scale(.9)}}
+@keyframes blobB{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-140px,-80px) scale(1.2)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.7)}70%{box-shadow:0 0 0 12px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}html{scroll-behavior:auto}}
+
+/* ---------- Phone ---------- */
+@media (max-width:700px){
+  .menu{gap:14px;font-size:14px}
+  .brand img{height:40px}
+  .brand-name{font-size:18px}
+  .brand-tag{font-size:9px;letter-spacing:.1em}
+  .menu .hide-sm{display:none}
+  .hero{padding:48px 0 72px}
+  .hero h1{font-size:34px}
+  .hero p{font-size:17px}
+  .head h2,.about-text h2,.contact-info h2{font-size:30px}
+  section.block,.contact{padding:64px 0}
+  .badge-3{display:none}
+  .about-logo{height:280px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="brand">
+      <img src="logo.png" alt="SL Enterprises logo">
+      <div>
+        <div class="brand-name"><span>SL</span> ENTERPRISES</div>
+        <span class="brand-tag">SOFTWARE DEVELOPMENT &amp; TECHNOLOGY</span>
+      </div>
+    </a>
+    <nav class="menu">
+      <a href="#services">Services</a>
+      <a href="#projects" class="hide-sm">Projects</a>
+      <a href="#process" class="hide-sm">How we work</a>
+      <a href="#about" class="hide-sm">About</a>
+      <a href="#contact" class="btn btn-blue btn-small">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="home" class="hero">
+  <div class="blob blob-a" aria-hidden="true"></div>
+  <div class="blob blob-b" aria-hidden="true"></div>
+  <div class="ring" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="pill fade"><span class="dot"></span>Taking new projects · [YOUR CITY], India</span>
+      <h1 class="fade d1">Websites that bring customers to your <span class="typed"><span id="word">shop.</span><span class="cursor"></span></span></h1>
+      <p class="fade d2">SL Enterprises builds fast, mobile-friendly websites and web apps for shops, clinics, coaching centres, hotels and growing businesses.</p>
+      <div class="hero-btns fade d3">
+        <a href="#contact" class="btn btn-blue lift">Start your project</a>
+        <a href="#projects" class="btn btn-ghost lift">See our work</a>
+      </div>
+    </div>
+    <div class="mock-area fade d2" aria-hidden="true">
+      <div class="badge badge-1">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F8A4C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Mobile friendly</div>
+      <div class="badge badge-2">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F8A4C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Google ready</div>
+      <div class="badge badge-3">WhatsApp connected</div>
+      <div class="mock">
+        <div class="mock-dots"><span></span><span></span><span></span></div>
+        <div class="mock-body">
+          <div class="bar" style="height:14px;width:55%;background:#0B1B3F"></div>
+          <div class="bar" style="height:10px;width:85%;background:#B9C3D8"></div>
+          <div class="bar" style="height:10px;width:70%;background:#B9C3D8"></div>
+          <div class="bar" style="height:36px;width:40%;background:#0165D4;border-radius:8px"></div>
+          <div class="mock-cards"><div></div><div></div><div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MOVING STRIP ===== -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Business Websites</span><span>✦</span><span>Landing Pages</span><span>✦</span><span>Web Apps</span><span>✦</span><span>Dashboards</span><span>✦</span><span>Website Fixing</span><span>✦</span><span>Google Setup</span><span>✦</span>
+    <span>Business Websites</span><span>✦</span><span>Landing Pages</span><span>✦</span><span>Web Apps</span><span>✦</span><span>Dashboards</span><span>✦</span><span>Website Fixing</span><span>✦</span><span>Google Setup</span><span>✦</span>
+  </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="block">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Services</span>
+      <h2>What we build for you</h2>
+    </div>
+    <div class="grid grid-4">
+      <div class="card lift">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0165D4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8M12 18v3"/></svg>
+        <h3>Business Websites</h3>
+        <p>Multi-page websites with Home, About, Services and Contact – built to look great on every phone.</p>
+      </div>
+      <div class="card lift">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0165D4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 10h16M10 10v10"/></svg>
+        <h3>Landing Pages</h3>
+        <p>One focused page for an offer, event or ad campaign, with a clear call-to-action and enquiry form.</p>
+      </div>
+      <div class="card lift">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0165D4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg>
+        <h3>Web Apps &amp; Dashboards</h3>
+        <p>Login systems, admin panels, booking and custom tools built with React and Node.js.</p>
+      </div>
+      <div class="card lift">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0165D4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>
+        <h3>Website Fix &amp; Update</h3>
+        <p>Already have a website? We fix errors, update content, improve speed and set it up for Google.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="block white">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Our Work</span>
+      <h2>Recent projects</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="proj lift">
+        <div class="proj-img">[Project screenshot]</div>
+        <div class="proj-body">
+          <span class="proj-tag">Business Website</span>
+          <h3>[Project 1 name]</h3>
+          <p>[One line about what was built]</p>
+        </div>
+      </div>
+      <div class="proj lift">
+        <div class="proj-img">[Project screenshot]</div>
+        <div class="proj-body">
+          <span class="proj-tag">Landing Page</span>
+          <h3>[Project 2 name]</h3>
+          <p>[One line about what was built]</p>
+        </div>
+      </div>
+      <div class="proj lift">
+        <div class="proj-img">[Project screenshot]</div>
+        <div class="proj-body">
+          <span class="proj-tag">Web App</span>
+          <h3>[Project 3 name]</h3>
+          <p>[One line about what was built]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section id="process" class="block">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">How we work</span>
+      <h2>Simple 4-step process</h2>
+    </div>
+    <div class="grid grid-4">
+      <div class="step"><div class="step-num">01</div><h3>Discuss</h3><p>You tell us your business and what you need. We share a clear price and timeline.</p></div>
+      <div class="step"><div class="step-num">02</div><h3>Design</h3><p>We show you the design first. Nothing is built until you approve it.</p></div>
+      <div class="step"><div class="step-num">03</div><h3>Build</h3><p>We develop the website and share progress at every milestone.</p></div>
+      <div class="step"><div class="step-num">04</div><h3>Go Live</h3><p>Your website goes live on your domain, and we help you get listed on Google.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="block white">
+  <div class="wrap about">
+    <div class="about-logo">
+      <img src="logo-full.jpg" alt="SL Enterprises – Software Development &amp; Technology: Web, Mobile, Desktop, Cloud">
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">About us</span>
+      <h2>A small team that treats your business like its own</h2>
+      <p>SL Enterprises is a [YOUR CITY]-based firm that helps local businesses get online. We keep things simple: honest pricing, clear timelines and direct WhatsApp support.</p>
+      <p>[Add 1–2 lines about yourself here]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <h2>Let's build your website</h2>
+      <p>Send us a message or chat on WhatsApp. We usually reply the same day.</p>
+      <!-- WhatsApp: 91 ke baad apna 10-digit number daalo, jaise 919876543210 -->
+      <a class="wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%20SL%20Enterprises%2C%20I%20need%20a%20website" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+        Chat on WhatsApp</a>
+      <div class="details">
+        <span>Email: <a href="mailto:sleenterprises.dev@gmail.com">sleenterprises.dev@gmail.com</a></span>
+        <span>Phone: [YOUR NUMBER]</span>
+        <span>Location: [YOUR CITY], India</span>
+      </div>
+    </div>
+
+    <form name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+      <input type="hidden" name="form-name" value="enquiry">
+      <p class="hidden"><label>Don't fill this: <input name="bot-field"></label></p>
+      <div class="field">
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" type="text" placeholder="Full name" required>
+      </div>
+      <div class="field">
+        <label for="f-phone">Phone / WhatsApp</label>
+        <input id="f-phone" name="phone" type="tel" placeholder="10-digit number" required>
+      </div>
+      <div class="field">
+        <label for="f-service">What do you need?</label>
+        <select id="f-service" name="service">
+          <option>Business Website</option>
+          <option>Landing Page</option>
+          <option>Web App / Dashboard</option>
+          <option>Fix / Update my website</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-msg">Message</label>
+        <textarea id="f-msg" name="message" rows="4" placeholder="Tell us about your business"></textarea>
+      </div>
+      <button type="submit" class="btn btn-blue">Send enquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot">
+    <span class="foot-left"><span class="foot-logo"><img src="logo.png" alt=""></span>© <span id="year">2026</span> SL Enterprises. All rights reserved.</span>
+    <span>Website &amp; App Development · [YOUR CITY]</span>
+  </div>
+</footer>
+
+<script>
+  // Hero ka badalta hua word
+  var words = ['shop.', 'clinic.', 'hotel.', 'coaching.', 'business.'];
+  var i = 0;
+  var el = document.getElementById('word');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) {
+    setInterval(function () {
+      i = (i + 1) % words.length;
+      el.textContent = words[i];
+    }, 1800);
+  }
+  // Footer me current saal
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
